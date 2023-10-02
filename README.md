@@ -243,7 +243,7 @@
 <br>  3) Для работы с **JSON** в языке Python можно пользоваться библиотекой **json**.
 
 ## Task № 6 (3-Покер)
->Колода состоит из 52 карт. Каждая карта обозначается одним из тринадцати значений (2, 3, 4, 5, 6, 7, 8, 9, Ten, Jack, Queen, King, Ace) и одной из четырех мастей (Spades, Clubs, Diamonds, Hearts).
+>Колода состоит из 52 карт. Каждая карта обозначается одним из тринадцати значений **(2, 3, 4, 5, 6, 7, 8, 9, Ten, Jack, Queen, King, Ace)** и одной из четырех мастей **(Spades, Clubs, Diamonds, Hearts)**.
 <br> Выдуманная игра 3-Покер происходит следующим образом.
 <br> 1) Изначально все **n** игроков получают по две карты из колоды.
 <br> 2) После этого на стол выкладывается одна карта из той же колоды.
@@ -305,19 +305,18 @@
 <br> В четвертом наборе входных данных невозможно добиться победы первого игрока.
 
 ## Task № 7 (Баны по IP)
-> Дан черный список IP адресов. Все IP адреса принадлежат подсети 100.200.0.0/16, то есть имеют вид 100.200.X.Y для некоторых 0≤X,Y<256 .
+> Дан черный список **IP** адресов. Все **IP** адреса принадлежат подсети **100.200.0.0/16**, то есть имеют вид **100.200.X.Y** для некоторых 0≤X,Y<256 .
 <br> Вам нужно запретить доступ ко всем адресам из черного списка. Для этого можно создать фильтрующий файл. Каждая запись в файле имеет вид:
-<br> - 100.200.0.0/16 — эта запись запрещает доступ к подсети из 65536 адресов, то есть ко всем адресам, которые имеют вид 100.200.X.Y для некоторых 0≤X,Y<256 ;
-<br> - 100.200.X.0/24 (0≤X<256) — эта запись запрещает доступ к подсети из 256 адресов, то есть ко всем адресам, которые имеют вид 100.200.X.Y для некоторого 0≤Y<256 ;
-<br> - 100.200.X.Y (0≤X,Y<256) — эта запись запрещает доступ к указанному IP адресу.
-<br> Из-за технических ограничений в файле не может быть больше, чем k
-записей. Вам нужно составить фильтрующий файл так, чтобы доступ ко всем IP адресам из черного списка был запрещен. При этом, количество запрещенных IP адресов не из черного списка должно быть минимально.
+<br> - **100.200.0.0/16** — эта запись запрещает доступ к подсети из **65536** адресов, то есть ко всем адресам, которые имеют вид **100.200.X.Y** для некоторых **0≤X,Y<256**;
+<br> - **100.200.X.0/24 (0≤X<256)** — эта запись запрещает доступ к подсети из **256** адресов, то есть ко всем адресам, которые имеют вид **100.200.X.Y** для некоторого **0≤Y<256**;
+<br> - **100.200.X.Y (0≤X,Y<256)** — эта запись запрещает доступ к указанному **IP** адресу.
+<br> Из-за технических ограничений в файле не может быть больше, чем **k** записей. Вам нужно составить фильтрующий файл так, чтобы доступ ко всем **IP** адресам из черного списка был запрещен. При этом, количество запрещенных **IP** адресов не из черного списка должно быть минимально.
 <br><br> **Формат входных данных:**
-<br> Первая строка содержит два целых числа n и k(1≤n,k≤65536) — размер черного списка IP адресов и максимальное количество записей в фильтрующем файле.
-<br> Следующие n cтрок содержат по одному IP адресу из черного списка в формате 100.200.X.Y, 0≤X,Y<256 .
+<br> Первая строка содержит два целых числа **n** и **k(1≤n,k≤65536)** — размер черного списка **IP** адресов и максимальное количество записей в фильтрующем файле.
+<br> Следующие n cтрок содержат по одному **IP** адресу из черного списка в формате **100.200.X.Y, 0≤X,Y<256** .
 <br><br> **Формат выходных данных:**
-<br> В первой строке выведите минимально возможное количество запрещенных IP адресов не из черного списка.
-<br> Во второй строке выведите количество использованных записей в файле m(1≤m≤k).
+<br> В первой строке выведите минимально возможное количество запрещенных **IP** адресов не из черного списка.
+<br> Во второй строке выведите количество использованных записей в файле **m(1≤m≤k)**.
 <br> В следующих m строках выведите сами записи.
 <br> Если ответов несколько, выведите любой.
  
@@ -468,57 +467,56 @@ values (1, 1, 1, 3, '2023-01-01 12:00:00', '2023-01-13 12:00:00'),<br>
             <th> Input </th>
         </tr>
     </thead>
-    <tbody>
+<tbody>
         <tr>
-    <td rowspan=4 align="center"> 1 </td>
+            <td rowspan=4 align="center"> 1 </td>
             <td rowspan=4>
-create table packages <br>
-( <br>
-    id   bigint primary key, <br>
-    name text not null <br>
-); <br>
-
-create table fulfilments <br>
-( <br>
-id   bigint primary key, <br>
-name text not null <br>
-); <br>
-
-create table transportations <br>
-( <br>
-id             bigint primary key, <br>
-package_id     bigint    not null, <br>
-source_id      bigint    not null, <br>
-destination_id bigint    not null, <br>
-departure_time timestamp not null, <br>
-arrival_time   timestamp not null, <br>
-constraint fk_transportations_package_id foreign key (package_id) references packages (id), <br>
-constraint fk_transportations_source_id foreign key (source_id) references fulfilments (id), <br>
-constraint fk_transportations_destination_id foreign key (destination_id) references fulfilments (id) <br>
-); <br>
-
-insert into packages <br>
-values (1, 'Package slow'), <br>
-(2, 'Package fast'), <br>
-(3, 'Package strange'); <br>
-
-insert into fulfilments <br>
-values (1, 'Moscow'), <br>
-(2, 'Spb'), <br>
-(3, 'Almaty'), <br>
-(4, 'Novosibirsk'), <br>
-(5, 'Vladivostok'); <br>
-
-insert into transportations <br>
-values (1, 1, 1, 3, '2023-01-01 12:00:00', '2023-01-13 12:00:00'), <br>
-(2, 1, 3, 3, '2023-01-15 12:00:00', '2023-01-31 12:00:00'), <br>
-(3, 1, 3, 5, '2023-02-27 12:00:00', '2023-03-14 12:00:00'), <br>
-(4, 1, 5, 5, '2023-03-15 12:00:00', '2023-03-28 12:00:00'), <br>
-(5, 2, 1, 2, '2023-02-15 12:00:00', '2023-02-15 18:00:00'), <br>
-(6, 3, 2, 3, '2023-04-02 12:00:00', '2023-04-05 12:00:00'), <br>
-(7, 3, 3, 5, '2023-04-07 12:00:00', '2023-04-28 12:00:00'); <br>
-</td>
-            
+                create table packages <br>
+                ( <br>
+                    id   bigint primary key, <br>
+                    name text not null <br>
+                ); <br>
+                 <br>
+                create table fulfilments <br>
+                ( <br>
+                id   bigint primary key, <br>
+                name text not null <br>
+                ); <br>
+                 <br>
+                create table transportations <br>
+                ( <br>
+                id             bigint primary key, <br>
+                package_id     bigint    not null, <br>
+                source_id      bigint    not null, <br>
+                destination_id bigint    not null, <br>
+                departure_time timestamp not null, <br>
+                arrival_time   timestamp not null, <br>
+                constraint fk_transportations_package_id foreign key (package_id) references packages (id), <br>
+                constraint fk_transportations_source_id foreign key (source_id) references fulfilments (id), <br>
+                constraint fk_transportations_destination_id foreign key (destination_id) references fulfilments (id) <br>
+                ); <br>
+                 <br>
+                insert into packages <br>
+                values (1, 'Package slow'), <br>
+                (2, 'Package fast'), <br>
+                (3, 'Package strange'); <br>
+                 <br>
+                insert into fulfilments <br>
+                values (1, 'Moscow'), <br>
+                (2, 'Spb'), <br>
+                (3, 'Almaty'), <br>
+                (4, 'Novosibirsk'), <br>
+                (5, 'Vladivostok'); <br>
+                 <br>
+                insert into transportations <br>
+                values (1, 1, 1, 3, '2023-01-01 12:00:00', '2023-01-13 12:00:00'), <br>
+                (2, 1, 3, 3, '2023-01-15 12:00:00', '2023-01-31 12:00:00'), <br>
+                (3, 1, 3, 5, '2023-02-27 12:00:00', '2023-03-14 12:00:00'), <br>
+                (4, 1, 5, 5, '2023-03-15 12:00:00', '2023-03-28 12:00:00'), <br>
+                (5, 2, 1, 2, '2023-02-15 12:00:00', '2023-02-15 18:00:00'), <br>
+                (6, 3, 2, 3, '2023-04-02 12:00:00', '2023-04-05 12:00:00'), <br>
+                (7, 3, 3, 5, '2023-04-07 12:00:00', '2023-04-28 12:00:00'); <br>
+            </td>
         </tr>
     </tbody>
 </table>
